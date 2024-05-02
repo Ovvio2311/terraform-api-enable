@@ -16,7 +16,7 @@ provider "google" {
 }
 
 
-provider "helm" {
+/*provider "helm" {
   kubernetes {
     # config_path = "~/.kube/config"
     # host                   = "https://${module.gke.endpoint}"
@@ -34,7 +34,7 @@ provider "helm" {
     client_key             = base64decode(data.google_container_cluster.primary.master_auth.0.client_key)
     client_certificate = base64decode(data.google_container_cluster.primary.master_auth.0.client_certificate)
   }
-}
+}*/
 # ----------------------------------------------------------------------------------------
 
 module "project-services" {
