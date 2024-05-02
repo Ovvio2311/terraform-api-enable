@@ -44,17 +44,17 @@ module "project-services" {
   project_id                  = var.project_id
 
   activate_apis = [
-    /*"compute.googleapis.com",
+    "compute.googleapis.com",
     "iam.googleapis.com",
     "container.googleapis.com",
     "artifactregistry.googleapis.com",
     "cloudbuild.googleapis.com",
     "cloudkms.googleapis.com",
     "cloudresourcemanager.googleapis.com",
-    "gkehub.googleapis.com",*/
+    "gkehub.googleapis.com",
     "serviceusage.googleapis.com",
-    /*"sqladmin.googleapis.com",
-    "storage-api.googleapis.com"*/
+    "sqladmin.googleapis.com",
+    "storage-api.googleapis.com"
   ]
 }
 
