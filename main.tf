@@ -37,7 +37,28 @@ provider "helm" {
 }
 # ----------------------------------------------------------------------------------------
 
-resource "google_project_service" "project" {
+module "project-services" {
+  source  = "terraform-google-modules/project-factory/google//modules/project_services"
+  version = "~> 14.5"
+
+  project_id                  = var.project_id
+
+  activate_apis = [
+    "compute.googleapis.com",
+    "iam.googleapis.com",
+    "container.googleapis.com",
+    "artifactregistry.googleapis.com",
+    "cloudbuild.googleapis.com",
+    "cloudkms.googleapis.com",
+    "cloudresourcemanager.googleapis.com",
+    "gkehub.googleapis.com",
+    "serviceusage.googleapis.com",
+    "sqladmin.googleapis.com",
+    "storage-api.googleapis.com"
+  ]
+}
+
+/*resource "google_project_service" "project" {
   project = "proven-fort-421209"
   service = "sqladmin.googleapis.com"
 
@@ -48,3 +69,4 @@ resource "google_project_service" "project" {
 
   disable_dependent_services = true
 }
+*/
