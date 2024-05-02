@@ -1,4 +1,5 @@
-
+# gcloud services enable serviceusage.googleapis.com
+# gcloud services enable compute.googleapis.com
 data "google_client_config" "default" {  
 }
 
